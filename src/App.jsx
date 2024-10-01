@@ -28,6 +28,7 @@ function App() {
 
       {/* Container Start */}
       <div class="flex flex-row flex-1">
+        <Sidebar />
         <div class="flex flex-col mt-1 max-w-full p-4 flex-1">
           <div class="flex flex-row h-3/4 p-3 gap-5">
             <div class="w-2/3 border-2 border-black rounded-4xl"></div>
