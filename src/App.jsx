@@ -1,3 +1,4 @@
+import Sidebar from "./components/Sidebar"
 function App() {
   return (
     <div class="h-screen flex flex-col">
@@ -26,25 +27,27 @@ function App() {
       {/* Navbar End */}
 
       {/* Container Start */}
-      <div class="flex flex-col mt-1 max-w-full p-4 flex-1">
-        <div class="flex flex-row h-3/4 p-3 gap-5">
-          <div class="w-2/3 border-2 border-black rounded-4xl"></div>
-          <div class="w-1/3 flex flex-col gap-5">
-            <div class="h-1/2 border-2 border-black rounded-4xl"></div>
-            <div class="h-1/2 border-2 border-black rounded-4xl"></div>
+      <div class="flex flex-row flex-1">
+        <div class="flex flex-col mt-1 max-w-full p-4 flex-1">
+          <div class="flex flex-row h-3/4 p-3 gap-5">
+            <div class="w-2/3 border-2 border-black rounded-4xl"></div>
+            <div class="w-1/3 flex flex-col gap-5">
+              <div class="h-1/2 border-2 border-black rounded-4xl"></div>
+              <div class="h-1/2 border-2 border-black rounded-4xl"></div>
+            </div>
+            <div class="w-2/3 border-2 border-black rounded-4xl"></div>
+            <div class="w-1/3 flex flex-col gap-5">
+              <div class="h-1/2 border-2 border-black rounded-4xl"></div>
+              <div class="h-1/2 border-2 border-black rounded-4xl"></div>
+            </div>
           </div>
-          <div class="w-2/3 border-2 border-black rounded-4xl"></div>
-          <div class="w-1/3 flex flex-col gap-5">
-            <div class="h-1/2 border-2 border-black rounded-4xl"></div>
-            <div class="h-1/2 border-2 border-black rounded-4xl"></div>
-          </div>
-        </div>
-        <div class="flex flex-row flex-1 p-3 gap-4">
-          <div class="w-1/2 border-2 border-black rounded-4xl"></div>
-          <div class="flex flex-row flex-1 gap-5">
-            <div class="w-1/3 border-2 border-black rounded-4xl"></div>
-            <div class="w-1/3 border-2 border-black rounded-4xl"></div>
-            <div class="w-1/3 border-2 border-black rounded-4xl"></div>
+          <div class="flex flex-row flex-1 p-3 gap-4">
+            <div class="w-1/2 border-2 border-black rounded-4xl"></div>
+            <div class="flex flex-row flex-1 gap-5">
+              <div class="w-1/3 border-2 border-black rounded-4xl"></div>
+              <div class="w-1/3 border-2 border-black rounded-4xl"></div>
+              <div class="w-1/3 border-2 border-black rounded-4xl"></div>
+            </div>
           </div>
         </div>
       </div>
