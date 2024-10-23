@@ -1,4 +1,5 @@
 import Card from "../components/Card";
+import Sidebar from "../components/Sidebar"
 import erc from "../assets/erc.svg";
 import map from "../assets/map.svg";
 import node1 from "../assets/node1.svg";
@@ -9,15 +10,9 @@ const Dashboard = () => {
       {/* Container Utama */}
       <div className="flex h-full gap-3.5">
         {/* Sidebar - 5% */}
-        <div className="w-1/20 h-full bg-white p-4 flex flex-col items-center rounded-4xl shadow-md shadow-slate-400">
-          <div className="w-12 h-12 bg-gray-300 rounded-full"></div>
-          <div className="flex flex-col gap-8 justify-center flex-grow">
-            <div className="w-10 h-10 bg-gray-300 rounded-3xl"></div>
-            <div className="w-10 h-10 bg-gray-300 rounded-3xl"></div>
-            <div className="w-10 h-10 bg-gray-300 rounded-3xl"></div>
-            <div className="w-10 h-10 bg-gray-300 rounded-3xl"></div>
-          </div>
-        </div>
+        
+        <Sidebar/>
+        
         {/* Sidebar END */}
 
         {/* Baris Kiri - 25% */}

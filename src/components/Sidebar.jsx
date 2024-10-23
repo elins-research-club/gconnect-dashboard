@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 const Sidebar = () => {
   const [open, setOpen] = useState(true);
-  const [submenuOpen, setSubmenuOpen] = useState(false); 
 
   const Menus = [
     { title: "Dashboard", src: "SquaresFour" },
@@ -12,24 +11,12 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className=' p-3'>
-      <div className={`${!open ? "w-48" : "w-24"} border-2 rounded-[25px] duration-300 h-screen p-5 pl-7 bg-[#EFEFEF] relative`}>
-        {/* <img
-          src="./src/assets/control.png"
-          className={`absolute cursor-pointer rounded-full -right-3 top-9 w-7 border-2 border-[#2596be] rotate-180 ${!open && 'rotate-0'}`}
+    <div >
+      
+      <div className={`${!open ? "w-48" : "w-20"} border-2 rounded-[25px] duration-300 h-full p-3 pl-5 bg-[#EFEFEF] relative`}>
+        <div className={`flex items-center gap-x-4 `}>
+          <img src='./src/assets/Vector.png' className='w-[36px] h-[34px] object-contain'
           onClick={() => {
-            if (open) {
-              setSubmenuOpen(false); 
-            }
-            setOpen(!open);
-          }}
-        /> */}
-        <div className={`flex items-center gap-x-4`}>
-          <img src='./src/assets/Vector.png' className='w-[38px] h-[36px] object-contain'
-          onClick={() => {
-            if (open) {
-              setSubmenuOpen(false); 
-            }
             setOpen(!open);
           }}/>
           {!open && <span className="whitespace-nowrap">G-Connect</span>}
@@ -44,9 +31,6 @@ const Sidebar = () => {
                 >
                   <img src={`./src/assets/${menu.src}.png`} className="w-6 h-6"
                    onClick={() => {
-                    if (open) {
-                      setSubmenuOpen(false); 
-                    }
                     setOpen(!open);
                   }} />
                   {!open && <span className="whitespace-nowrap">{menu.title}</span>}
