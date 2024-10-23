@@ -93,9 +93,9 @@ const Dashboard = () => {
               </div>
 
               <div className="flex-1">
-                <Card className="max-h-full w-full p-4 rounded-3xl shadow-md shadow-slate-400">
-                  <div className="rounded-xl flex justify-center">
-                    <img src={map} alt="My map" className="w-11/12" />
+                <Card className="h-full w-full p-4 rounded-3xl shadow-md shadow-slate-400">
+                  <div className="rounded-xl h-full">
+                    {/* <img src={map} alt="My map" className="w-11/12" /> */}
                   </div>
                 </Card>
               </div>
@@ -117,7 +117,7 @@ const Dashboard = () => {
                     G-Connect Node 1
                   </div>
                   <div className="h-5/6 rounded-md">
-                    <img src={node1} alt="My node" className="h-full" />
+                    {/* <img src={node1} alt="My node" className="h-full" /> */}
                   </div>
                 </Card>
 
