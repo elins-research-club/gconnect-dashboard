@@ -10,8 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "leaflet": "^1.9.4",
+    "plotly.js": "^2.35.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-leaflet": "^4.2.1",
+    "react-plotly.js": "^2.6.0",
+    "react-router-dom": "^6.27.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

@@ -1,157 +1,132 @@
+import React from "react";
 import Card from "../components/Card";
+import Sidebar from "../components/Sidebar";
 import erc from "../assets/erc.svg";
-import map from "../assets/map.svg";
-import node1 from "../assets/node1.svg";
+import PlotlyChart from "../components/PlotlyChart";
 
 const Dashboard = () => {
-  return (
-    <div className="h-screen p-4 bg-E5E5E5 font-outfit">
-      {/* Container Utama */}
-      <div className="flex h-full gap-3.5">
-        {/* Sidebar - 5% */}
-        <div className="w-1/20 h-full bg-white p-4 flex flex-col items-center rounded-4xl shadow-md shadow-slate-400">
-          <div className="w-12 h-12 bg-gray-300 rounded-full"></div>
-          <div className="flex flex-col gap-8 justify-center flex-grow">
-            <div className="w-10 h-10 bg-gray-300 rounded-3xl"></div>
-            <div className="w-10 h-10 bg-gray-300 rounded-3xl"></div>
-            <div className="w-10 h-10 bg-gray-300 rounded-3xl"></div>
-            <div className="w-10 h-10 bg-gray-300 rounded-3xl"></div>
-          </div>
-        </div>
-        {/* Sidebar END */}
+  // Example data for different charts
+  const windSpeedData = { x: ["12:00", "13:00", "14:00"], y: [5, 10, 15] };
+  const waterHeightData = { x: ["12:00", "13:00", "14:00"], y: [0.5, 0.6, 1.0] };
+  const rainfallData = { x: ["12:00", "13:00", "14:00"], y: [10, 20, 30] };
+  const humidityData = { x: ["12:00", "13:00", "14:00"], y: [70, 65, 80] };
 
-        {/* Baris Kiri - 25% */}
-        <div className="flex flex-col w-1/4 gap-3.5">
-          <Card className="w-full flex-1 rounded-3xl p-4 shadow-md shadow-slate-400">
-            <div className="text-center font-semibold text-2xl">
+  return (
+    <div className="h-screen p-4 bg-gray-200">
+      {/* Main Container */}
+      <div className="flex h-full gap-4">
+        {/* Sidebar */}
+        <Sidebar />
+
+        {/* Left Column (Sensor Data) */}
+        <div className="flex flex-col w-1/4 gap-4 max-h-screen">
+          <Card className="flex flex-col h-24 justify-center items-center">
+            <div className="text-center text-lg font-bold">
               Weather Monitoring Dashboard
             </div>
           </Card>
 
-          <Card className="w-full h-22/100 rounded-3xl p-4 shadow-md shadow-slate-400">
-            <div className="font-semibold text-lg">Kecepatan Angin</div>
-            <div className="h-3/4 mt-3 rounded-md">
-              {" "}
-              {/* Tempatkan chart di sini */}{" "}
+          <Card className="flex flex-col">
+            <div className="font-semibold text-sm font-bold">Kecepatan Angin</div>
+            <div className="h-16 mt-3 rounded-md">
+              {/* <PlotlyChart xData={windSpeedData.x} yData={windSpeedData.y} type="line" /> */}
             </div>
           </Card>
 
-          <Card className="w-full h-22/100 rounded-3xl p-4 shadow-md shadow-slate-400">
-            <div className="font-semibold text-lg">Ketinggian Air</div>
-            <div className="h-3/4 mt-3 rounded-md">
-              {" "}
-              {/* Tempatkan chart di sini */}{" "}
+          <Card className="flex flex-col">
+            <div className="font-semibold text-sm font-bold">Ketinggian Air</div>
+            <div className="h-16 mt-3 rounded-md">
+              {/* <PlotlyChart xData={waterHeightData.x} yData={waterHeightData.y} type="bar" /> */}
             </div>
           </Card>
 
-          <Card className="w-full h-22/100 rounded-3xl p-4 shadow-md shadow-slate-400">
-            <div className="font-semibold text-lg">Tingkat Curah Hujan</div>
-            <div className="h-3/4 mt-3 rounded-md">
-              {" "}
-              {/* Tempatkan chart di sini */}{" "}
+          <Card className="flex flex-col">
+            <div className="font-semibold text-sm font-bold">Tingkat Curah Hujan</div>
+            <div className="h-16 mt-3 rounded-md">
+              {/* <PlotlyChart xData={rainfallData.x} yData={rainfallData.y} type="scatter" /> */}
             </div>
           </Card>
 
-          <Card className="w-full h-22/100 rounded-3xl p-4 shadow-md shadow-slate-400">
-            <div className="font-semibold text-lg">Kelembaban</div>
-            <div className="h-3/4 mt-3 rounded-md">
-              {" "}
-              {/* Tempatkan chart di sini */}{" "}
+          <Card className="flex flex-col">
+            <div className="font-semibold text-sm font-bold">Kelembaban</div>
+            <div className="h-16 mt-3 rounded-md">
+              {/* <PlotlyChart xData={rainfallData.x} yData={rainfallData.y} type="scatter" /> */}
             </div>
           </Card>
         </div>
-        {/* Baris Kiri END */}
 
-        {/* Baris Tengah - 70% */}
-        <div className="flex flex-col w-7/10 max-h-screen gap-3.5">
-          <Card className="w-full rounded-3xl shadow-md shadow-slate-400 items-center justify-center p-2">
-            <div className="font-semibold text-lg text-start">
-              G-Connect Project Indonesia 2024
-            </div>
-            <div className="text-md text-start font-light">
-              Electronics and Instrumentation UGM research initiative, which aim
-              to provide early warning system for disaster-prone areas.
+        {/* Main Column */}
+        <div className="flex flex-col w-3/4 gap-4 max-h-screen">
+          {/* Project Description */}
+          <Card className="p-4">
+            <div className="font-semibold text-base font-bold">G-Connect Project Indonesia 2024</div>
+            <div className="text-md font-light text-sm">
+              Electronics and Instrumentation UGM research initiative aims to develop early warning systems for disaster-prone areas.
             </div>
           </Card>
 
-          <div className="flex h-95/100 flex-row gap-3.5">
-            <div className="flex flex-col w-3/5 gap-3.5">
-              <div className="flex flex-row gap-3.5 h-22/100">
-                <Card className="h-full rounded-3xl gap-1 p-4 flex items-center w-1/2 shadow-md shadow-slate-400 flex-col">
-                  <div className="text-center font-semibold self-start text-3xl">
-                    Powered by
-                  </div>
-                  <img src={erc} alt="My Icon" className="w-full h-full" />
+          <div className="flex gap-4 h-full">
+            {/* Map and Weather */}
+            <div className="flex flex-col w-3/5 gap-4">
+              <div className="flex gap-4 h-1/4">
+                <Card className="w-1/2 flex flex-col justify-center">
+                  <div className="font-semibold text-sm font-bold">Powered by</div>
+                  <img src={erc} alt="ERC Logo" className="w-full h-full object-contain" />
                 </Card>
-
-                <Card className="h-full rounded-3xl p-4 flex items-center w-1/2 shadow-md shadow-slate-400">
-                  <div className="text-center font-semibold text-xl self-start">
-                    Cuaca Hari Ini
-                  </div>
-                  <div className="text-lg"></div>
+                
+                <Card className="w-1/2 flex flex-col justify">
+                  <div className="font-semibold text-sm font-bold">Cuaca Hari Ini</div>
                 </Card>
               </div>
 
-              <div className="flex-1">
-                <Card className="h-full w-full p-4 rounded-3xl shadow-md shadow-slate-400">
-                  <div className="rounded-xl h-full">
-                    {/* <img src={map} alt="My map" className="w-11/12" /> */}
-                  </div>
-                </Card>
-              </div>
+              {/* Map placeholder */}
+              <Card className="flex-1 p-4">
+                <div className="rounded-lg h-full">
+                  {/* Map component will go here */}
+                </div>
+              </Card>
             </div>
 
-            <div className="flex flex-col gap-3.5 flex-1">
-              <div className="grid grid-cols-2 gap-3.5 w-full h-3/5">
-                <Card className="w-full rounded-3xl p-4 shadow-md shadow-slate-400 items-center">
-                  <div className="font-semibold text-xl self-start">
-                    Temperatur
-                  </div>
-                  <div className="h-4/5 mt-3 rounded-md text-4xl text-center font-semibold">
-                    20°C
-                  </div>
+            {/* Other Data (Temperature, Node, Wind Direction, etc.) */}
+            <div className="flex flex-col gap-4 w-2/5">
+              <div className="grid grid-cols-2 gap-4 h-2/3">
+                <Card className="flex flex-col justify">
+                  <div className="font-semibold text-sm font-bold">Temperatur</div>
+                  {/* <div className="text-4xl font-semibold mt-3">20°C</div> */}
                 </Card>
 
-                <Card className="w-full rounded-3xl shadow-md shadow-slate-400">
-                  <div className="font-semibold text-center text-xl w-full h-max">
-                    G-Connect Node 1
-                  </div>
-                  <div className="h-5/6 rounded-md">
-                    {/* <img src={node1} alt="My node" className="h-full" /> */}
-                  </div>
-                </Card>
-
-                <Card className="w-full rounded-3xl p-4 shadow-md shadow-slate-400">
-                  <div className="font-semibold text-xl">Arah Angin</div>
-                  <div className="h-4/5 mt-3 rounded-md">
-                    {" "}
-                    {/* Tempatkan radar chart di sini */}{" "}
-                  </div>
-                </Card>
-
-                <Card className="w-full rounded-3xl p-4 shadow-md shadow-slate-400">
-                  <div className="font-semibold text-center text-xl">
-                    Kelembaban Tanah
-                  </div>
-                  <div className="h-4/5 mt-3 rounded-md">
-                    {" "}
-                    {/* Tempatkan gauge di sini */}{" "}
-                  </div>
-                </Card>
-              </div>
-              <div className="flex flex-1">
-                <Card className="w-full rounded-3xl p-4 shadow-md shadow-slate-400">
-                  <div className="font-semibold text-xl">Akselerometer</div>
+                <Card className="flex flex-col justify">
+                  <div className="font-semibold text-sm font-bold">G-Connect Node 1</div>
                   <div className="h-5/6 mt-3 rounded-md">
-                    {" "}
-                    {/* Tempatkan chart di sini */}{" "}
+                    {/* Node 1 content */}
+                  </div>
+                </Card>
+
+                <Card className="flex flex-col justify">
+                  <div className="font-semibold text-sm font-bold">Arah Angin</div>
+                  <div className="h-4/5 mt-3 rounded-md">
+                    {/* Radar chart for wind direction */}
+                  </div>
+                </Card>
+
+                <Card className="flex flex-col justify">
+                  <div className="font-semibold text-sm font-bold">Kelembaban Tanah</div>
+                  <div className="h-4/5 mt-3 rounded-md">
+                    {/* Gauge for soil humidity */}
                   </div>
                 </Card>
               </div>
+
+              {/* Accelerometer */}
+              <Card className="flex-1 flex flex-col justify">
+                <div className="font-semibold text-sm font-bold">Akselerometer</div>
+                <div className="h-5/6 mt-3 rounded-md">
+                  {/* Chart will be inserted here */}
+                </div>
+              </Card>
             </div>
           </div>
         </div>
-        {/* Baris Tengah END */}
       </div>
     </div>
   );
