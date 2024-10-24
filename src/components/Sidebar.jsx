@@ -13,7 +13,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className={`${open ? "w-48" : "w-16"} border-2 border-gray-300 shadow-lg rounded-3xl duration-300 pl-3 bg-white relative`}>
+    <div className={`${open ? "w-56" : "w-20"} border-2 border-gray-300 shadow-lg rounded-3xl duration-300 pl-3 bg-white relative`}>
       {/* Sidebar Toggle Icon */}
       <div className={`flex items-center gap-x-4 pt-6`}>
         <img

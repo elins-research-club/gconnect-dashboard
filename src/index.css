@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url("leaflet/dist/leaflet.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.leaflet-container {
+  width: 100%;
+  height: 100vh;
+}
 
 @layer base {
     html {
       font-family: 'Poppins', sans-serif;
     }
-  }
-/* @import "leaflet/dist/leaflet.css"; */
+}
