@@ -112,35 +112,35 @@ const Dashboard = () => {
   })
 
   return (
-    <div className="h-screen p-4 bg-gray-200">
+    <div className="h-screen p-2 bg-gray-200">
       {/* Main Container */}
-      <div className="flex h-full gap-4">
+      <div className="flex h-full gap-2">
         {/* Sidebar */}
         <Sidebar/>
 
         {/* Left Column (Sensor Data) */}
-        <div className="flex flex-col w-1/4 gap-4 max-h-screen">
+        <div className="flex flex-col w-1/4 gap-2 h-full">
           <Card className="flex flex-col h-20 justify-center items-center">
             <div className="text-center text-base font-semibold">
               Weather Monitoring Dashboard
             </div>
           </Card>
 
-          <Card className="flex flex-col">
+          <Card className="flex flex-col h-1/3">
             <div className="font-semibold text-sm">Kecepatan Angin</div>
             <div className="h-26 mt-3 rounded-md">
               <KecepatanAnginGraph id="windSpeed" kecepatanAnginData={socketData.windSpeed} />
             </div>
           </Card>
 
-          <Card className="flex flex-col">
+          <Card className="flex flex-col h-1/3">
             <div className="font-semibold text-sm">Ketinggian Air</div>
             <div className="h-26 mt-3 rounded-md">
               <KetinggianAirGraph id="distance" ketinggianAirData={socketData.distance} />
             </div>
           </Card>
 
-          <Card className="flex flex-col">
+          <Card className="flex flex-col h-1/3">
             <div className="font-semibold text-sm">Kelembaban</div>
             <div className="h-26 mt-3 rounded-md">
               <KelembabanGraph id="humidity" kelembabanData={socketData.humidity} /> {/* Pass the random yawData */}
@@ -149,9 +149,9 @@ const Dashboard = () => {
         </div>
 
         {/* Main Column Center Column + Right Column */}
-        <div className="flex flex-grow gap-4 max-h-screen">
+        <div className="flex flex-grow gap-2 max-h-screen">
           {/* Center Column */}
-          <div className="flex flex-col w-3/5 gap-4">
+          <div className="flex flex-col w-3/5 gap-2">
             <Card className="p-4">
               <div className="font-semibold text-base">G-Connect Project Indonesia 2024</div>
               <div className="text-md font-light">
@@ -173,8 +173,8 @@ const Dashboard = () => {
           </div>
 
           {/* Right Column */}
-          <div className="flex flex-col w-2/5 gap-4">
-            <div className="grid grid-cols-2 gap-4 h-2/5">
+          <div className="flex flex-col w-2/5 gap-2">
+            <div className="grid grid-cols-2 gap-2 h-2/5">
               <Card className="flex flex-col justify">
                 <div className="font-semibold text-sm">Temperatur</div>
                 <div className="font-semibold text-sm">‎</div>
