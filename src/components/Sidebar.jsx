@@ -1,15 +1,21 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import squares from "/src/public/assets/SquaresFour.png"
+import clock from "/src/public/assets/ClockCounterClockwise.png"
+import note from "/src/public/assets/Note.png"
+import siren from "/src/public/assets/Siren.png"
+import erclogo from "/src/public/assets/Vector.png"
+import arrow from "/src/public/assets/arrow1.svg"
 
 const Sidebar = () => {
   const [open, setOpen] = useState(false);
   const [submenuOpen, setSubmenuOpen] = useState(false);
 
   const Menus = [
-    { title: "Dashboard", src: "SquaresFour" },
-    { title: "History", src: "ClockCounterClockwise" },
-    { title: "Reports", src: "Note" },
-    { title: "Alerts", src: "Siren" },
+    { title: "Dashboard", src: squares },
+    { title: "History", src: clock },
+    { title: "Reports", src: note },
+    { title: "Alerts", src: siren },
   ];
 
   return (
@@ -20,7 +26,7 @@ const Sidebar = () => {
     >
       {/* Sidebar Toggle Icon */}
         <img
-          src="./src/assets/arrow1.svg"
+          src={arrow}
           className={`w-8 mx-1 self-end ${open ? "rotate-180" : ""} transition-all opacity-40 duration-500 select-none cursor-pointer`}
           onClick={() => {
             if (open) {
@@ -34,7 +40,7 @@ const Sidebar = () => {
 
       <div className={`flex items-center gap-x-2`}>
         <img
-          src="./src/assets/Vector.png"
+          src={erclogo}
           className="w-[34px] h-[32px] object-contain ml-[3px]"
         />
         {open && (
@@ -53,7 +59,7 @@ const Sidebar = () => {
                 className={`flex items-center gap-x-3 cursor-pointer p-2 rounded-lg transition-colors duration-200 hover:bg-indigo-200`}
               >
                 <img
-                  src={`./src/assets/${menu.src}.png`}
+                  src={menu.src}
                   className="w-6 h-6"
                   alt={menu.title}
                   onClick={() => {
