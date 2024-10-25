@@ -1,29 +1,24 @@
-import { MapContainer, TileLayer, Circle, ScaleControl } from "react-leaflet";
+import { MapContainer, TileLayer, Circle, ScaleControl, Marker, Popup, Tooltip } from "react-leaflet";
 import tileLayer from "../utils/tileLayer";
 import "leaflet/dist/leaflet.css";
 
 const MapWrapper = () => {
-  const center = [-7.7701778, 110.377862];
+  const position = [-7.945192, 110.423425];
 
   return (
     <div className="h-full w-full">
       <MapContainer 
-        center={center} 
+        center={position} 
         zoom={16} 
         scrollWheelZoom={false} 
         style={{ height: "100%", width: "100%" }}  // Ensure the map has full height and width
       >
         <TileLayer {...tileLayer} />
         <ScaleControl imperial={false} />
-
-        <Circle
-          center={center}
-          weight={2}
-          color={'red'}
-          fillColor={'red'}
-          fillOpacity={0.1}
-          radius={50}
-        />
+        <Marker position={position}>
+          <Popup>G-Connect Node 1 <br /> 19 Oktober 2024</Popup>
+          <Tooltip>G-Connect Node 1</Tooltip>
+        </Marker>
       </MapContainer>
     </div>
   );
